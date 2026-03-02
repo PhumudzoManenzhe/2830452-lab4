@@ -14,9 +14,9 @@ async function searchCountry(countryName) {
     spinner.classList.remove('hidden');
 
     try {
-        const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
+        const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`);
         
-        
+
         if (!response.ok) throw new Error('Country not found');
 
         const [country] = await response.json();
